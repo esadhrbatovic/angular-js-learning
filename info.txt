@@ -13,6 +13,7 @@ ng-model: Used for databinding. With the ng-model directive you can bind the val
 	-provides status for application dada (invalid, dirty, touched)
 	-provides CSS classes for HTML elements.
 	-binds HTML elemts to HTML forms.
+ng-model is also used for two-way databinding
 	
 {{myForm.myField.$valid / $dirty /$touched}}	
 
@@ -34,6 +35,22 @@ ng-model adds or removes the following classes, according to the status of the f
 	
 ng-show: only displays block it's used in if the expression defined results to true. <div ng-show="..."></div>
 	
+ng-controller: 
+Applications in AngularJS are controlled by controllers. Read about controllers in the AngularJS Controllers chapter.
+
+Because of the immediate synchronization of the model and the view, the controller can be completely separated from the view, 
+and simply concentrate on the model data. Thanks to the data binding in AngularJS, the view will reflect any changes made in the controller.
+
+controllers control the data of AngularJS applications.
+
+controllers are regular JavaScript Objects.
+
+AngularJS will invoke the controller with a $scope object.
+
+In AngularJS, $scope is the application object (the owner of application variables and functions).
+
+
+
 directives provided by angular: ng-app, ng-model, ng-init, ng-repeat
 you can create custom directives
 

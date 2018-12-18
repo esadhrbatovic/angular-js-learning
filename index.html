@@ -18,6 +18,20 @@
       <p>{{divInit}}</p>
     </div>
 
+    <div ng-controller="bindingCtrl">
+      <p>Two-Way binding example with controller and ng-model through input: <input type="text" ng-model="myModel"></p>
+      <p ng-bind="myModel"></p>
+      <p>{{myModel}}</p>
+      <button type="button" ng-click="buttonEvent()">Click Me!</button>
+      <p ng-click="buttonEvent()">click this text</p>
+    </div>
+
+    <div ng-controller="functionCtrl">
+      <p>first number: <input type="number" ng-model="firstNum"></p>
+      <p>second number: <input type="number" ng-model="secondNum"></p>
+      <p>{{ctrlFunction()}}</p>
+    </div>
+
     <form name="myForm">
       <p>input validation with ng-model example</p>
       <p>e-mail: <input type="email" name="email" ng-model="email"></p>

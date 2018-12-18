@@ -4,7 +4,6 @@ var app = angular.module("myApp", []);
 app.directive("myDirective", function(){
     return{
         //you return a template with html elements in the directive
-
         template: "<p> This content comes from a custom directive : my-directive</p>"
     };
 });
