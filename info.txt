@@ -4,3 +4,10 @@ https://www.w3schools.com/angular/default.asp
 Notes:
 add $scope to controller
 custom directive naming: camelCase -> <div camel-case></div>
+
+expressions
+ng-init: initializing ng-models within div
+ng-model: used for databinding
+directives provided by angular: ng-app, ng-model, ng-init, ng-repeat
+you can create custom directives
+ng-repeat: iterate through array of literals or objects
