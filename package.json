@@ -1,0 +1,11 @@
+{
+  "name": "ng",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "test",
+    "start": "live-server --browser=CHROME --host=localhost"
+  },
+  "author": "esad hrbatovic",
+  "license": "ISC"
+}
