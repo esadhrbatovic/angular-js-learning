@@ -2,21 +2,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 <body>
-  
-  <div ng-app="myApp" ng-controller="myController">
-    <p>My first exprasdession dev: {{ firstname + " "  + lastname}}</p>
+
+  <div ng-app="myApp" ng-controller="myCtrl" ng-init="ngInit='content of ng-init'">
+    <p>basic expression example: -> {{ firstname + " " + lastname}} <- initialized in controller myCtrl</p>
+    <p>ng-model input example: <input type="text" ng-model="ngModel"></p>
+    <p>ng-model output: {{ngModel}}</p>
+    <p>ng-init example: {{ngInit}}</p>
+    <div ng-init="divInit='model initialized in div declaration'">
+    <p>{{divInit}}</p>
+    </div>
   </div>
 
+
+  <script src="./js/app.js"></script>
+  <script src="./js/controller.js"></script>
+
 </body>
-
-<script>
-var app = angular.module("myApp", []);
-
-app.controller("myController", function($scope) {
-    $scope.firstname = "John";
-    $scope.lastname = "Doe";
-});
-
-</script>
 
 </html>

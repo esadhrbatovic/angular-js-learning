@@ -1,1 +1,6 @@
+Tutorial:
 https://www.w3schools.com/angular/default.asp
+
+Notes:
+add $scope to controller
+custom directive naming: camelCase -> <div camel-case></div>
