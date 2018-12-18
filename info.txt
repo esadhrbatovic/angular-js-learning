@@ -6,8 +6,47 @@ add $scope to controller
 custom directive naming: camelCase -> <div camel-case></div>
 
 expressions
-ng-init: initializing ng-models within div
-ng-model: used for databinding
+ng-init: initializing ng-models within div, rarely used, usually controllers are used
+
+ng-model: Used for databinding. With the ng-model directive you can bind the value of an input field to a variable created in AngularJS.
+	-also provides type validation for application data (number, email, required)
+	-provides status for application dada (invalid, dirty, touched)
+	-provides CSS classes for HTML elements.
+	-binds HTML elemts to HTML forms.
+	
+{{myForm.myField.$valid / $dirty /$touched}}	
+
+impact css with form data in css:
+input.ng-invalid{
+    background-color: color;
+}
+
+ng-model adds or removes the following classes, according to the status of the form field: 
+	ng-empty
+	ng-not-empty
+	ng-touched
+	ng-untouched
+	ng-valid
+	ng-invalid
+	ng-dirty
+	ng-pending
+	ng-pristine
+	
+ng-show: only displays block it's used in if the expression defined results to true. <div ng-show="..."></div>
+	
 directives provided by angular: ng-app, ng-model, ng-init, ng-repeat
 you can create custom directives
+
+custom directives: created in var app (reference to module at creation), with app.directive("name", function(){ return{template: ...};};
+can be used with element name <my-directive></my-directive> or attribute <div my-directive></div>
+can also be used in comment or class
+you can restrict the usage of the directive within it's declaration by adding restrict: ...
+
+The legal restrict values are:
+
+	E for Element name
+	A for Attribute
+	C for Class
+	M for Comment
+
 ng-repeat: iterate through array of literals or objects
