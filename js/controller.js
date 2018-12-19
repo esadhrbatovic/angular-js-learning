@@ -17,3 +17,8 @@ app.controller("functionCtrl", function ($scope) {
         return $scope.firstNum + $scope.secondNum;
     }
 });
+
+app.controller('namesCtrl', function($scope) {
+    $scope.names = ['Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai'];
+});
+

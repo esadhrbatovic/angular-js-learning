@@ -64,6 +64,18 @@
     <div my-directive></div>
     <p>custom directive with attribute</p>
     <my-directive></my-directive>
+
+    <p>custom filter example, filter declared in app.sj, and controller in controller.js:</p>
+    <ul ng-controller="namesCtrl">
+        <li ng-repeat="x in names">
+            {{x | myFormat}}
+        </li>
+    </ul>
+
+    <p>filter usage, order list alphabetically example. Filter can be used in ng-repeat directive or expression.</p>
+    <ul ng-controller="namesCtrl">
+      <li ng-repeat="x in names | orderBy">{{x}}</li>
+    </ul>
   </div>
 
   <script src="./js/app.js"></script>

@@ -77,3 +77,8 @@ ng-repeat: iterate through array of literals or objects
 
 filters:
 https://www.w3schools.com/angular/angular_filters.asp
+
+Filter can be used in ng-repeat directive or expression.
+Custom filters can be defined with app.filter('filtername', function(){return function(x){};);
+giving the returned function from the anonymous function a parameter is required. since this is 
+the data the filter is using itself on. in this case x would be a specific name of a person e.g.
