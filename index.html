@@ -67,15 +67,57 @@
 
     <p>custom filter example, filter declared in app.sj, and controller in controller.js:</p>
     <ul ng-controller="namesCtrl">
-        <li ng-repeat="x in names">
-            {{x | myFormat}}
-        </li>
+      <li ng-repeat="x in names">
+        {{x | myFormat}}
+      </li>
     </ul>
 
     <p>filter usage, order list alphabetically example. Filter can be used in ng-repeat directive or expression.</p>
     <ul ng-controller="namesCtrl">
       <li ng-repeat="x in names | orderBy">{{x}}</li>
     </ul>
+
+    <p ng-controller="serviceCtrl">example usage of $location service, absUrl() : {{currentLocation}}</p>
+
+    <div ng-controller="httpCtrl">
+      <p>retrieving example data with $http service. iterating through persondata.json array and displaying on a table</p>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Company</th>
+          <th>Age</th>
+        </tr>
+        <tr ng-repeat="person in persondata">
+          <td>{{person.name}}</td>
+          <td>{{person.gender}}</td>
+          <td>{{person.company}}</td>
+          <td>{{person.age}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div ng-controller="getCtrl">
+      <p>generic parameterized http.get() function in getCtrl controller: </p>
+      <p ng-init="getFunction('data/hello.html')">{{responsedata}}</p>
+    </div>
+
+    <div>
+      <p>generic parameterized http.get() function in getCtrl controller: </p>
+      <p ng-controller="getCtrl" ng-init="getFunction('data/persondata.json')">a persons name: {{responsedata[0].name}}</p>
+      <p>applying filter to list of person data fetched from http call and applying order by filter. filtering can be changed by clicking on table header.</p>
+      <table ng-controller="getCtrl" ng-init="getFunction('data/persondata.json')">
+        <tr>
+          <th ng-click="setOrderByParam('name')">Name</th>
+          <th ng-click="setOrderByParam('age')">Age</th>
+        </tr>
+        <tr ng-repeat="person in responsedata | orderBy:orderByParam">
+          <td>{{person.name}}</td>
+          <td>{{person.age}}</td>
+        </tr>
+      </table>
+    </div>
+
   </div>
 
   <script src="./js/app.js"></script>

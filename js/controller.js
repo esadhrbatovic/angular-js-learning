@@ -18,7 +18,28 @@ app.controller("functionCtrl", function ($scope) {
     }
 });
 
-app.controller('namesCtrl', function($scope) {
+app.controller('namesCtrl', function ($scope) {
     $scope.names = ['Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai'];
 });
 
+app.controller('serviceCtrl', function ($scope, $location) {
+    $scope.currentLocation = $location.absUrl();
+});
+
+app.controller('httpCtrl', function ($scope, $http) {
+    $http.get("data/persondata.json").then(function (response) {
+        $scope.persondata = response.data;
+    });
+});
+
+app.controller('getCtrl', function ($scope, $http) {
+    $scope.getFunction = function (x) {
+        $http.get(x).then(function (response) {
+            $scope.responsedata = response.data;
+        });
+    }
+
+    $scope.setOrderByParam = function(param){
+        $scope.orderByParam = param;
+    }
+});
