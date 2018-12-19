@@ -3,6 +3,13 @@ https://www.w3schools.com/angular/default.asp
 
 Notes:
 add $scope to controller
+$scope is the binding object between controller and view (html), can have attributes. Attributes can be declared and manipulated in 
+controllers. In view you dont use prefix $scope, but only the property name.
+
+All applications have a $rootScope which is the scope created on the HTML element that contains the ng-app directive.
+$scope is available in controllers, if you want to be more specific
+If a variable has the same name in both the current scope and in the rootScope, the application uses the one in the current scope.
+
 custom directive naming: camelCase -> <div camel-case></div>
 
 expressions
@@ -67,3 +74,6 @@ The legal restrict values are:
 	M for Comment
 
 ng-repeat: iterate through array of literals or objects
+
+filters:
+https://www.w3schools.com/angular/angular_filters.asp
